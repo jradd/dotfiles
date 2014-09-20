@@ -1,0 +1,14 @@
+ZSH=$HOME/.oh-my-zsh
+
+DISABLE_UPDATE_PROMPT=true
+ZSH_THEME="af-magic"
+
+plugins=(git virtualenv python django pip)
+
+source $ZSH/oh-my-zsh.sh
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin
+export WORKON_HOME="$HOME/.virtualenvs"
+source /usr/local/bin/virtualenvwrapper.sh
+alias vi='/usr/local/bin/vim'
+
+source $HOME/.rvm/scripts/rvm
