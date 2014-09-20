@@ -1,25 +1,15 @@
-" ----------------------------------------------------------------
-" Jeremy Redd 2014 r00
-" -------------------------------------------------------------------
-set rtp+=~/.vim/bundle/vundle/
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set t_Co=256
-set nocompatible
-filetype on                  " best to have it on before turning it off
-filetype off                 " needs to be off to setup Vundle
-set rtp+=~/.vim/bundle/vundle/
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-call vundle#rc()
-
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
-Bundle 'benmills/vimux'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'digitaltoad/vim-jade'
@@ -33,24 +23,6 @@ Bundle 'othree/html5.vim'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'ap/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'kien/ctrlp'
-
-
-filetype plugin indent on    " enable plugins, detection and indenting
-syntax on
-
-" -------------------------------------------------------------------
-"  change map <leader> from \ to ,
-"  ------------------------------------------------------------------
-:let mapleader = ","
-
-" time out mappings after 1 second (1000) and key codes after 1/2 a second (500)
-set timeout timeoutlen=1000 ttimeoutlen=500
-
-" Trying to break a very old habit...
-" ex mode commands made easy
-nnoremap ; :
-nnoremap Q <nop>
 
 " -------------------------------------------------------------------
 " basic options
@@ -205,10 +177,6 @@ nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
 " reindent entire file
 nmap _= :call Preserve("normal gg=G")<CR>
 
-
-
-" Jedi-Vim
-let g:jedi#completions_command = "<C-N>"
 " -------------------------------------------------------------------
 " Splits
 " -------------------------------------------------------------------
@@ -308,23 +276,15 @@ nnoremap <leader> <esc>:wq!
 " Opens file to cwd
 set browsedir=buffer
 
-" Vimux Mappings
-nmap <leader>vp :VimuxPromptCommand<cr>
-nmap <leader>vl :VimuxRunLastCommand<cr>
-nmap <leader>vq :VimuxCloseRunner<cr>
-nmap <leader>vx :VimuxInterruptRunner<cr>
 
-" Vimux Octopress helpers
-nmap <leader>vg :call VimuxRunCommand("gen")<CR>
-nmap <leader>vi :call VimuxRunCommand("ingen")<CR>
-nmap <leader>vz :call VimuxRunCommand("dz")<CR>
-nmap <leader>vd :call VimuxRunCommand("deploy")<CR>
 
-"Jedi-Vim keys
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "1"
+
+
+
+
+
+
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
