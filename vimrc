@@ -1,3 +1,5 @@
+scriptencoding utf-8
+set encoding=utf-8
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -82,11 +84,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" -------------------------------------------------------------------
-" Encoding anyone?
-" -------------------------------------------------------------------
-set termencoding=utf-8  " we like utf-8
-set encoding=utf-8
 
 " -------------------------------------------------------------------
 " What to do with files and focus
