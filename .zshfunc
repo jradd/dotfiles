@@ -1,0 +1,60 @@
+
+
+#getip=$(curl -k https://wtfismyip.com  |egrep -o "[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}")
+
+#function _wtfip() {
+# WTF is my public IP Address?
+#printf "YOUR FUCKING IP IS >>>\n %s\n" "$getip"
+#}
+
+#function _gol_commit() {
+#[[ -d ./.git*(#qN) ]] && print echo "True"
+#print "This"
+#}
+
+
+function _create_remote_repo() {
+# usage: _create_remote_repo REPONAME
+curl -u 'jtredd' https://api.github.com/user/repos -d '{"name":"$1"}' && \
+    git remote add origin git@github.com:jtredd/${1}.git \
+    && git push origin master
+}
+
+#function _mdurl() {
+# Convert directory list to markdown urls for wiki
+#if (( $# == 0 ))
+#then
+#    echo usage: _mdurl path; fi
+#    for i in $( for i in $(ls $1); do basename $i; done |sed  's/.md//' |sort) do printf "[%q]  \c" $i done
+#}
+#
+
+#getip=$(curl -k https://wtfismyip.com  |egrep -o "[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}")
+
+#_wtfip() {
+#printf "YOUR FUCKING IP IS >>>\n %s\n" "$getip"
+#}
+
+#_printarr () {
+#    local arrayname=$1
+#    local tmp=$arrayname[@]
+#    local array=( "${!tmp}" )
+#    local FS=', '    # Field separator
+#    local var
+#    # Print each element enclosed in quotes and separated by $FS
+#    printf -v var "\"%s\"%FS" "${array[@]}"
+#    # Cut off trailing $FS
+#    var=${var%$FS}
+#    echo "$arrayname=($var)"
+#}
+
+
+_decom () {
+sed -e '/^[ \t]*#/d' $1 |sed '/^$/d' # sed '/./!d'
+}
+
+
+function _gc_repo () {
+ curl -u $1 https://api.github.com/user/repos -d '{"name":"$2"}'
+}
+

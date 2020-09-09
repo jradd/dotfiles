@@ -1,0 +1,4 @@
+la="ls -lAtrhp --color=always"
+l="ls -trhpc --color=always"
+ls="ls -lasrhp --color=always"
+ll="ls -rthp"
